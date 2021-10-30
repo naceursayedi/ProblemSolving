@@ -1,0 +1,50 @@
+public class maxSubArray
+{
+    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
+    private int x;
+    public Scanner input = new Scanner(System.in);
+    
+    void printResult(int[] A,int j, int p){
+    int max = A[j];
+    for(int i=j;i<=p;i++){
+    if(max<=A[i]){
+    max=A[i];
+    }
+    System.out.println(A[i]);
+    }
+    System.out.println("Max = "+ max);
+    }
+    /**
+     * Konstruktor für Objekte der Klasse maxSubArray
+     */
+    public maxSubArray()
+    {
+       
+    
+    // put Array length and add Array values
+    System.out.println("Put the length of the Array ");
+    
+    int l = input.nextInt(); 
+    
+    int[] A = new int[l];
+    
+    for(int i=0;i<l;i++){
+    
+    System.out.println("A["+i+"]=");
+    A[i]=input.nextInt();
+    }
+    int k;
+    do{
+    k = input.nextInt();
+    }while((k<1)||(k>l));
+    System.out.println("k="+k);
+    
+    
+    // The main function
+    
+    for(int i=0;i<(l-k+1);i++){
+    printResult(A,i,(i+k-1));
+    }
+    }
+   
+}
